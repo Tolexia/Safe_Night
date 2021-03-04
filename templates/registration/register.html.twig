@@ -1,0 +1,28 @@
+{% extends 'blue_base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<img class="login-logo login-logo-marge" src="{{ asset('build/images/favicon.png') }}" alt="logo"/>
+
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <div class="register-form">
+        {{ form_start(registrationForm) }}
+        <h1 class="login-title">INSCRIPTION</h1>
+        <div>
+            {{ form_row(registrationForm.email) }} 
+        </div>
+        <div>
+            {{ form_row(registrationForm.plainPassword) }} 
+        </div>
+        <div>
+            {{ form_row(registrationForm.agreeTerms) }} 
+        </div>
+        <button class = "login-button" type="submit" class="btn">S'inscrire</button>
+        <a class="login-registration" href="{{ path('app_login') }}">Vous avez déjà un compte ?<br>Connectez-vous !</a>
+    {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}

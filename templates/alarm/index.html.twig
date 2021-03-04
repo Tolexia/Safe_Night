@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SOS{% endblock %}
+{% block bodyClass %}safeNightRed{% endblock %}
+{% block body %}
+    <h1 class="h1-SOS">SOS</h1>
+    <p class="p-SOS">Une notification à été envoyée<br> à vos contacts de confiance</p>
+    <button class="alarm-btn align-self-center" onclick="toggle()"> ALARME </button>
+    <audio id="audio" src = "{{ asset('/son/alarm.wav') }}"></audio>
+    <script>
+        function toggle() {
+            const alarm = document.getElementById('audio');
+            if (alarm.paused) {
+                alarm.play();
+            } else {
+            alarm.pause();
+            }
+        }
+    </script> 
+{% endblock %}

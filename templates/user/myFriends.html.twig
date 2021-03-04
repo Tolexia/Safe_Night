@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section class="my-friends-banner" style = "background-color: #7588b9 ;">
+		<img class = "banner-logo-friends" src = "{{ asset('build/images/friends_icon.png') }}">
+        <h1 class="my-friends-title">MES AMIS</h1>
+	</section>
+	<div>
+		{{ include('user/_search_form.html.twig') }}
+	</div>
+	<div>
+		{{ include('user/_myfriends_list.html.twig') }}
+	</div>
+{% endblock %}
+

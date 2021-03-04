@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
+    <title>{% block title %}Safe Night{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}{% endblock %}
+    {% block headMap %}{% endblock %}
+</head>
+<body class="{% block bodyClass %}{% endblock %}">
+
+    {% include '_header.html.twig' %}
+
+    {% block body %}{% endblock %}
+    
+    {% include '_navigation.html.twig' %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        <script>
+            document.getElementById('searchField').addEventListener('input', function(event) {
+            const query = event.target.value;
+            fetch(`{{ path('user_autocomplete', {id: app.user.id}) }}?q=` + query)
+                .then(response => response.json())
+                .then(json => {
+                    let resultHtml = "";
+                    console.log(json);
+                    json.forEach(element => {
+                        resultHtml = resultHtml + `
+                        <li><a href = "/user/${element.id}">${element.firstName} ${element.lastname}</a></li>
+                    `;
+                    });
+
+                document.querySelector('#autocomplete').innerHTML = resultHtml;
+                })
+                .catch((error) => {console.log(error)});
+
+            });
+        </script>
+        <script>
+            function unscrollFunction() {
+                document.querySelector('#footer').style.position = "static";
+            }
+            function scrollFunction() {
+                document.querySelector('#footer').style.position = "fixed";
+                setTimeout(unscrollFunction, 3000);
+            }
+
+            window.onscroll = scrollFunction;
+        </script> 
+    {% endblock %}
+</body>
+</html>

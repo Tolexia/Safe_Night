@@ -1,0 +1,981 @@
+@import 'variables.scss';
+
+@font-face{
+    font-family:"CooperHewitt-Book";
+    src: url("cooperhewitt-book.ttf");
+}
+
+@font-face{
+    font-family:"CooperHewitt-Medium";
+    src: url("cooper-hewitt.medium.ttf");
+}
+
+html, body {
+	min-height: 100vh;
+    margin: 0; padding: 0;
+}
+
+body {
+    font-family: 'CooperHewitt-Medium';
+    display:flex;
+    flex-direction: column;
+    color-adjust: exact;
+}
+
+.eventShow-article {
+padding: 2rem;
+}
+
+.eventShow-item {
+    text-align: center;
+}
+
+.eventShow-item span {
+    font-size: 1.3rem;
+}
+
+// Suppression des puces des listes à puces
+
+a {
+    text-decoration: none;
+}
+// Header style pour le fichier _header.html.twig
+
+header {
+    height: 4rem;
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 12px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0rem 1rem 0.25rem 1rem;
+    box-shadow: 0px -40px 93px -15px rgba(0,0,0,0.86);
+    margin-bottom: 0;
+    z-index: 30;
+}
+
+.leftarrow {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 5px;
+}
+
+.user-icon-section {
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.user-icon {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.user-icon-logged {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 0px 19px -8px rgba(0,0,0,0.75);
+}
+
+//Axel -> Template show.html.twig. D'ici à...
+
+// La classe btn doit avoir les mêmes propriétés que la classe user-button pour avoir le même format de bouton, et ajouter la classe delete-btn pour appliquer le DRY
+.btn {
+    border:1px solid black;
+    border-radius: 25px;
+    text-decoration: none;
+    display:block;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding:0.5em;
+    width: 14rem;
+    color:black;
+    align-self:center;
+}
+
+.delete-btn {
+    background-color: #BF797E;
+    color: rgb(78, 72, 72);
+    border-radius: 1rem;
+    font-size: 1rem;
+    width: 14rem;
+    padding: 0.6rem 0rem 0.5rem 0rem;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+}
+
+.delete-button-edit {
+    margin-top: -10rem;
+}
+
+.event-image-edit {
+    margin-top: 2rem;
+}
+
+.delete-btn-center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 17rem;
+}
+
+.button-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.icon {
+    max-width: 2rem;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.showItem {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.delete-form {
+    width: 14rem;
+}
+
+.banner-eventShow {
+    border-radius: 0rem 0rem 0.7rem 0.7rem;
+    width: 100%;
+    height: auto;
+}
+
+// à ici :)
+// Background color des pages: doormat, login, user/new
+
+.safeNightBlue {
+    background-color: $safeBlue-color;
+    justify-content: center;
+    text-align: center;
+}
+
+.safeNightBlue h1 {
+    color: white;
+}
+
+.safeNightBlue label {
+    color: white;
+}
+
+.safeNightBlue a {
+    color: white;
+}
+
+//Form (edit & new event pages)
+
+input {
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: solid 1px grey;
+    margin-bottom:1rem;
+    margin-top: 0.5rem;
+}
+
+form {
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form  div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+#registration_form_birthday {
+    flex-direction: row;
+}
+
+.pageTitle {
+    text-align: center;
+    margin-bottom: -2rem;
+    color: #413939;
+}
+
+#event_datetime_start_date, #event_datetime_end_date{
+    display: inline;
+    margin-right: 1rem;
+}
+
+#event_datetime_start_time, #event_datetime_end_time{
+    display: inline;
+}
+
+#user_birthday {
+    flex-direction: row;
+}
+
+#event_datetime_start, #event_datetime_end { 
+    flex-direction: row;
+}
+
+// Page "Mes évènements" du fichier index.html.twig
+
+.my-events-banner {
+    height: 12rem;
+    background-size: cover;
+    border-radius: 0rem 0rem 0.7rem 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+}
+
+.my-friends-banner {
+    height: 10.5rem;
+    background-size: cover;
+    border-radius: 0rem 0rem 0.7rem 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+}
+
+.my-events-title, .my-friends-title {
+    color: white;
+    position: absolute;
+    margin-left: 40px;
+    align-self: flex-end;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+.my-events-title {
+    font-size: 2rem;
+}
+
+.my-friends-title {
+    margin-left: 0;
+    text-shadow: none;
+    font-size: 200%;
+    margin-bottom: 1.2rem;
+}
+
+.my-events-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.my-events-content a {
+    color:white;
+    font-weight: bold;
+}
+
+li a {
+    color: black;
+}
+
+.new-event { 
+    height:20%;
+    margin-bottom:2rem;
+    border-radius: 1rem;
+}
+
+.event-list {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.event {
+    background-size: cover;
+    text-shadow: 1px 1px 2px black;
+    padding: 2rem 4rem 2rem 4rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.event-timer-tuile{
+    font-size: 0.7rem;
+}
+
+// HOME PAGE pour le fichier index.html.twig
+
+.banner-logo-friends {
+    width: 6rem;
+    height: auto;
+    margin-bottom: 2.2rem;
+}
+
+.banner-logo-event {
+    filter: invert(100%) brightness(1);
+    width: 4rem;
+    height: auto;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+}
+
+.banner-img {
+    width: 100%;
+    margin-top: -10px;
+}
+
+.home-body {
+    border-radius: 12px 12px 0px 0px;
+    margin-top: -10px;
+    background-color: white;
+}
+
+.home-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+// Boutons du menu home
+
+.home-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 9rem;
+    height: 7rem;
+    border-radius: 15px;
+    margin: 0.8rem;
+}
+
+// Texte des boutons du menu home
+
+.home-button p {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
+
+// Bouton "Friends"
+
+.button-friends {
+    background-color: #7688BA;
+}
+
+.button-friends img {
+    width: 4.5rem;
+}
+
+// Bouton "Events"
+
+.button-events {
+    background-color: #74B9AB;
+}
+
+.button-events p{
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+// Bouton "New event"
+
+.button-new-event {
+    background-color: #C07A7F;
+}
+
+.button-new-event div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 10px 0;
+}
+
+.button-new-event img {
+    width: 2rem;
+    filter: invert(100%) brightness(1);
+    margin-left: 15px;
+}
+
+.button-new-event span {
+    font-size: 1.3rem;
+    color: white;
+    padding-left: 4px;
+}
+
+.button-new-event p {
+    margin-bottom: 0px;
+}
+
+.button-map {
+    width: 9.1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        display: flex;
+        justify-content: space-around;
+        margin: 4rem;
+        max-width: 100%;
+        padding: 0px;
+        max-width: 100%;
+    }
+  }
+
+// Navigation Bar pour le fichier _navigation.html.twig
+
+footer {
+    position:fixed;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0rem 1rem 0rem;
+    border-radius: 12px 12px 0px 0px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 45px 93px -15px rgba(0,0,0,0.86);
+    z-index: 30;
+}
+
+.nav-bar {
+    bottom: 0;
+    margin-top: 4rem;
+}
+
+.Home-img {
+    height: 2.3rem;
+}
+
+.SOS-icon {
+    height:2.8rem;
+    width:auto;
+    box-sizing: border-box;
+}
+
+.SOS-img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 20px;
+    background: linear-gradient(315deg, #ea003F, #ea003F);
+    box-shadow:  9px 9px 13px #969696,
+                -9px -9px 13px #ffffff;
+}
+
+// Page Login du fichier login.html.twig
+
+.login-logo {
+    margin-top: 0rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15rem;
+    height: auto;
+}
+
+.login-title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.login-form-container {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 17rem;
+    padding: 0px;
+    font-weight: bold;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+}
+
+.login-form > label {
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+.login-form > input {
+    padding: 0.60rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: solid 1px grey;
+    outline: none;
+}
+
+.login-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login-button {
+    align-self: center;
+    background-color: #B8342B;
+    width: 65%;
+    padding: 10px 10px;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.login-registration {
+    margin-top: 2rem;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.signUpLink {
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.signUpLink a {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.login-form > label {
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+.register-form input {
+    padding: 0.60rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: solid 1px grey;
+    outline: none;
+}
+
+.register-form form {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 17rem;
+    padding: 0px;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+.register-form form  div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0rem;
+}
+
+.register-form label {
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+.login-logo-marge {
+    margin-top: 3.96rem;
+}
+
+// Show des Users (user/show.html.twig)
+
+.safeNightGray {
+    background-color: $safeGray-color;
+}
+
+.profil-pic-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+
+.profil-pic {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.profil-pic-default {
+    height: auto;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 100%;
+}
+
+.h1-profil-user {
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(65, 57, 57);
+}
+h2 {
+    margin-left: 2vw;
+}
+.user-profil {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    font-style: normal;
+    color: rgb(78, 72, 72);
+    border-spacing: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.user-profil th {
+    display: block;
+    margin-left: 2.75rem;
+    text-align: left;
+}
+
+.edit-delete-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.user-button {
+    color: white;
+    background-color: #7487B7;
+    border-radius: 1rem;
+    font-size: 1rem;
+    width: 14rem;
+    padding: 0.8rem 0rem 0.5rem 0rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+    font-weight: bold;
+}
+
+a.user-button-blue {
+    margin-top: -3rem;
+}
+
+.user-button:hover {
+    background-color: #2D306D;
+}
+
+#editAvatar {
+    align-self:center;
+    margin: 2.5rem 0 -2rem 0;
+    z-index: 1;
+}
+
+.user-button-disconnection {
+    background-color: #BF797E;
+}
+
+.delete-profil:hover {
+    background-color: #F48283;
+}
+
+// CSS de Friends
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #7487B7;
+    border-radius: 1rem;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2rem;
+    border: none;
+    padding: 0.6rem 0rem 0.6em 0rem;
+    text-align: center;
+    width: 10rem;
+    font-weight: bold;
+}
+
+#searchBox input {
+    transition-duration: .3s;
+}
+
+#searchBox input:hover {
+    letter-spacing: 1.5px;
+}
+
+#searchForm {
+    padding: 1rem 3rem 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-icon {
+    width: 2rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.my-friends-content {
+    list-style: none;
+    padding: 1rem;
+    margin-top: -1rem;
+}
+
+.my-friends-content li {
+    padding: 0.7rem 0 0.5rem 1rem;
+    background-color: #F2F2F2;
+    border-radius: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.friends-show {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.friend-link {
+    background-color: #EBEBEB;
+    margin: 0 1rem 1rem 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.friend-invite {
+    position:absolute;
+    right: 0;
+    transform: translateX(50%);
+    padding: 0;
+}
+
+.friend-invite-button {
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: sans-serif;
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    font-size: 1rem;
+    --hue: 220;
+    --saturation: 87%;
+    --lightness: 61%;
+    background: hsl(var(--hue), var(--saturation), var(--lightness));
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+.friend-invite-button.remove {
+    --hue: 6;
+}
+
+.friend-invite-button:hover,
+.friend-invite-button:focus {
+    --lightness: 40%;
+}
+
+.friend-invite-button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.friend-invite-button:active {
+    transform: scale(0.9);
+}
+
+.friend-show-picture-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #72B8AA;
+    width: 4.7rem;
+    height: 4.7rem;
+    border-radius: 50%;
+    margin-left: -13px;
+}
+
+.friend-picture {
+    width : 3.7rem;
+    height: 3.7rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 11px 26px -8px rgba(0, 0, 0, 0.75);
+}
+
+.friend-name {
+    padding: 1rem 1rem 1rem 0.7rem;
+    margin: 0;
+    width: 4rem;
+    font-size: 14px;
+    color: #413939;
+}
+
+.searching-users {
+    padding-left: 0;
+}
+
+.searching-users li {
+    list-style: none;
+}
+
+.searching-users li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBEBEB;
+    margin: 0 1rem 2rem 1rem;
+    border-radius: 1rem;
+    height: 12rem;
+}
+
+.searching-users-picture {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 11px 26px -8px rgba(0, 0, 0, 0.75);
+}
+
+.searching-picture-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7588B9;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+}
+
+.searching-users li a h2 {
+    padding: 0 0 2rem 1.5rem;
+    width: 10rem;
+    color: #413939;
+}
+
+.submit-btn {
+    margin-left: auto;
+    margin-right: auto;
+    width: 17rem;
+    background-color: #7487B7;
+    color: rgb(78, 72, 72);
+    border-radius: 1rem;
+    font-size: 1rem;
+    width: 14rem;
+    padding: 0.6rem 0rem 0.5rem 0rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+}
+
+/* CSS Map index */
+
+#map { 
+    position: absolute;
+    top: 0;
+    bottom: 0; 
+    width: 100%; 
+}
+
+/* CSS SOS Index */ 
+.background-SOS {
+    background-color: red;
+    color: white;
+    text-align: center;
+    flex: 1;
+}
+
+.alarm-btn{
+    margin-top: 3em;
+    text-align: center;
+    border-radius: 54px;
+    height: 4rem;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 10rem;
+    background: #f73010;
+}
+
+.h1-SOS{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 5rem;
+    color: white;
+}
+
+.safe-confirm-sos {
+    justify-content: space-between;
+    text-align: center;
+}
+
+.arrow-red-img {
+    height: 3rem;
+    width: 2.5rem;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.title-red {
+    color:#ea003F;
+}
+.p-SOS{
+    text-align: center;
+    color: white;
+}
+
+.safeNightRed {
+    background-color: red;
+}
+
+textarea {
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: solid 1px grey;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}

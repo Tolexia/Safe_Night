@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+    
+{% block body %}
+
+<img class="banner-img" src="{{ asset('build/images/banner-img.6394fd7a.jpg') }}"/>
+
+<section class="home-body">
+    <div class="home-menu">
+        {% if app.user %}
+        <a class="home-button button-friends" href = "{{ path('user_friend_show', {'id': app.user.id}) }}"><img src="{{ asset('build/images/friends_icon.png') }}"><p>MES AMIS</p></a>
+        {% endif %}
+        <a class="home-button button-events" href="/event"><p>MES ÉVÈNEMENTS</p></a>
+        <a class="home-button button-new-event" href="/event/new"><div><img src="{{ asset('build/images/addEvent.png') }}"><span>+</span></div><p>NOUVEL ÉVÈNEMENT</p></a>
+        <a class="home-button" href="/map"><img class="button-map" src="{{ asset('/build/images/map.c81597cb.png') }}"/></a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block header %}
+    <header>
+        <a href="{{ app.request.headers.get('referer') }}"><img class="leftarrow" src="{{ asset('build/images/previous.png') }}" alt="leftarrow"/></a>
+        <a class="user-icon-section" href="{{ path('profile') }}">
+            <img class="{{ app.user.avatar ? "user-icon-logged" : "user-icon" }}" src="{{ app.user.avatar ? '/uploads/' ~ app.user.avatar : asset('build/images/usericon.png') }}"/>
+        </a>
+        
+    </header>
+{% endblock %}
