@@ -10,7 +10,7 @@ This is Safe Night.
 If you want to run it to see it by yourself, here are few steps. Don't be afraid, it will take several minutes but it is not very complicated.
 
 * Make sure to have PHP, mySQL or postgreSQL, Yarn and Composer installed on your computer, and upgraded to latest versions to avoid possible crashes
-* You can implement global Symfony command on your OS by installing Symfony Flex from https://symfony.com/download to make things easier. If you don't want to, replace "symfony" command in the next lines by "php/bin"
+* You can implement global Symfony command on your OS by installing Symfony Flex from https://symfony.com/download to make things easier. If you don't want to, replace "symfony console" command in the next lines by "php bin/console"
 * Git clone the projet by running on a terminal the command "git clone" with the https adress of the repo, that you can find of the homepage of the repo, after a click on green button "code"
 * In your terminal, move inside the directory that just has been created, and run "composer install" and after "yarn install" to install necessary packages used in the project but not stocked in github because pretty heavy.
 * Create a copy of the .env file that you will find in the root folder of the project and name it .env.local
