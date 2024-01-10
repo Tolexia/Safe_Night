@@ -29,10 +29,10 @@ Thanks for reading, I hope you will enjoy the project, don't hesitate sending me
 Best regards =)
 
 ## Previews 
-[](./1.png)
-[](./2.png)
-[](./3.png)
-[](./4.png)
-[](./5.png)
-[](./6.png)
-[](./7.png)
+![](./1.png)
+![](./2.png)
+![](./3.png)
+![](./4.png)
+![](./5.png)
+![](./6.png)
+![](./7.png)
