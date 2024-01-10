@@ -282,8 +282,14 @@ form  div {
 }
 
 .my-events-content a {
-    color:white;
+    color: white;
     font-weight: bold;
+    font-size: 1.2rem;
+    background: #ffffff42;
+    display: inline-block;
+    width: fit-content;
+    backdrop-filter: blur(2px);
+    border-radius: 4px;
 }
 
 li a {
@@ -304,7 +310,7 @@ li a {
 .event {
     background-size: cover;
     text-shadow: 1px 1px 2px black;
-    padding: 2rem 4rem 2rem 4rem;
+    padding: 2rem 2rem 2rem 2rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
     text-transform: uppercase;
@@ -312,7 +318,7 @@ li a {
 }
 
 .event-timer-tuile{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 // HOME PAGE pour le fichier index.html.twig

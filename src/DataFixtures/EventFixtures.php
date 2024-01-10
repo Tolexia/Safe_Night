@@ -5,17 +5,9 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Event;
-use App\Repository\UserRepository;
 
 class EventFixtures extends Fixture
 {
-    private $userRepository;
-
-    public function __construct(UserRepository $userRepository)
-    {
-        $this->userRepository = $userRepository;
-    }
-
     public function load(ObjectManager $manager)
     {
         // $product = new Product();
